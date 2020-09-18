@@ -11,7 +11,11 @@ function searchWeather(city) {
     city +
     "&appid=b7ef947311647ad100ad8f8b2cd6da49";
   $.get(search, function (data) {
-    console.log(data.list[0].weather[0].main);
+    for (let i = 0; i < data.list.length; i++) {
+      if (i % 7 === 0) {
+        console.log(data.list[i].weather[0].main);
+      }
+    }
     alert("Load was performed.");
   });
 }
