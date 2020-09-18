@@ -14,6 +14,8 @@ function searchWeather(city) {
     for (let i = 0; i < data.list.length; i++) {
       if (i % 7 === 0) {
         console.log(data.list[i].weather[0].main);
+        var eachDay = data.list[i].weather[0].main;
+        $("#forecast").append(eachDay);
       }
     }
     alert("Load was performed.");
